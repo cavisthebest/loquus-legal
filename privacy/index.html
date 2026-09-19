@@ -75,31 +75,58 @@
   <p class="updated">Last updated: September 19, 2026</p>
 
   <div class="callout">
-    The short version: Loquus has no servers and no user accounts. Everything you do in the app stays
-    on your device. We don't collect your data because there's no system on our end for it to go to.
-    The Android beta also sends crash reports, which are described below.
+    The short version: Loquus runs no servers of its own and has no user accounts, and keeps your
+    learning data on your device. The only exception on iOS is an issue report you explicitly choose
+    to send to us so we can fix a problem. The Android beta also sends crash reports, which are
+    described below.
   </div>
 
   <h2>What Loquus is</h2>
   <p>
-    Loquus is a language-learning app for iOS. It works entirely offline: lessons, your progress, your
-    streak, and everything else Loquus knows about your learning are stored only on your device. Loquus
-    does not have a server, a database, or any backend that your information could be sent to.
+    Loquus is a language-learning app for iOS. Lessons, progress, streaks, and preferences work
+    entirely on your device. Loquus uses an Apple-managed CloudKit container solely for issue reports
+    that you choose to submit; it is not used for accounts, analytics, advertising, or learning profiles.
   </p>
 
   <h2>Information we collect</h2>
   <p>
-    We do not collect any personal information, apart from the crash reports in the Android beta
-    described in the next section. Specifically:
+    We do not collect information through ordinary use of the app, apart from the crash reports in
+    the Android beta described below. Specifically:
   </p>
   <ul>
-    <li><strong>No account.</strong> Loquus does not ask for your name, email address, or any sign-in.
-      There is nothing to create and nothing we could tie your usage to.</li>
+    <li><strong>No Loquus account.</strong> Loquus does not ask for your name or email address and
+      does not create its own login. Sending an optional issue report requires iCloud, as explained
+      below.</li>
     <li><strong>No analytics or tracking.</strong> Loquus does not use any analytics, advertising, or
-      tracking software, and does not share data with third parties for advertising purposes, because
-      it does not collect data in the first place.</li>
-    <li><strong>No ads.</strong> Loquus has no advertising and no ad networks.</li>
+      tracking software, and does not share data with third parties for advertising purposes.</li>
+    <li><strong>No ads.</strong> Loquus shows no advertising and embeds no ad networks. If you
+      installed Loquus after tapping an ad we ran, your device may send Apple's anonymous SKAdNetwork
+      conversion signal, described below.</li>
   </ul>
+
+  <h2>Voluntary issue reports</h2>
+  <p>
+    When you tap the shield button, describe a problem, and tap <strong>Send report</strong>, Loquus
+    sends only that voluntary report to our Apple-managed CloudKit support inbox. Depending on the screen, it may
+    include your description, issue category, a screenshot of the current app screen, app build, device
+    type, operating-system version, selected course, learning mode, and the lesson or game identifier.
+    Because the attachment is a capture of the visible screen, it can include lesson text or an answer
+    visible on that screen. It does not include your full learning profile, account information,
+    microphone audio, or payment details.
+  </p>
+  <p>
+    We use these reports only to investigate and resolve the issue. The report database is configured so
+    learners can create their own report but cannot read anyone else's. CloudKit automatically associates
+    the report with an app-specific creator identifier for the signed-in iCloud account; we do not use that
+    identifier to create a Loquus account or learning profile. Reports are reviewed and deleted when no
+    longer needed, and are not used for advertising, analytics, or tracking. Avoid including sensitive
+    personal information in the free-text description. If iCloud is unavailable, Loquus offers a prefilled
+    support email instead.
+  </p>
+  <p>
+    In TestFlight, you can also choose the separate TestFlight feedback option. That feedback is sent
+    through Apple's TestFlight flow after you choose to submit it there.
+  </p>
 
   <h2>Crash reports in the Android beta</h2>
   <p>
@@ -117,8 +144,8 @@
   <p>
     Your learning progress (which words you know, your streak, your preferences, and similar) is saved
     in a file on your own device, the same way any other app saves its local settings. It is never
-    transmitted anywhere. If you delete Loquus from your device, that data is deleted with it. Loquus
-    does not back this data up to any server of ours.
+    transmitted to the CloudKit support inbox. If you delete Loquus from your device, that local data is
+    deleted with it. Loquus does not back this data up to any server of ours.
   </p>
 
   <h2>Microphone and speech recognition</h2>
@@ -127,6 +154,16 @@
     feedback on your pronunciation. This uses Apple's on-device speech recognition. Your voice is
     processed entirely on your device and is never recorded, saved, or sent anywhere, including to us.
     You can decline microphone access and still use every other part of the app.
+  </p>
+
+  <h2>Ad attribution (SKAdNetwork)</h2>
+  <p>
+    If we run App Store ads and you install Loquus after tapping one, Apple's SKAdNetwork framework
+    may send the ad network an anonymous, aggregate conversion signal from your device: that the app
+    was installed, and later a coarse value indicating that a trial started or a subscription began.
+    This signal is designed by Apple to contain no identifiers — no name, no device ID, no learning
+    data — and neither we nor the ad network can connect it to you. It exists so we can tell whether
+    an ad worked at all, and nothing more. If you did not arrive through an ad, no signal is sent.
   </p>
 
   <h2>Purchases and subscriptions</h2>
@@ -139,18 +176,19 @@
 
   <h2>Children's privacy</h2>
   <p>
-    Loquus is not directed at children under 13, and we do not knowingly collect information from
-    anyone, including children, because we do not collect information from any user regardless of
-    age.
+    Loquus is not directed at children under 13. Ordinary app use does not transmit learning data, and
+    we do not knowingly collect personal information from children through voluntary issue reports. If
+    you believe a child submitted personal information in a report, contact us so we can delete it.
   </p>
 
   <h2>Your rights</h2>
   <p>
-    Because nothing is collected or stored outside your device, there is no external record of your
-    data for us to give you, correct, or delete on request. Deleting the app deletes everything Loquus
-    has stored about your learning. If you have questions about this, or believe this policy doesn't
-    fully answer something you're required to be told under your local law (for example under the
-    GDPR or CCPA), contact us using the details below.
+    Your learning data has no external record for us to give you, correct, or delete. You may request
+    deletion of a voluntary issue report by contacting us with the
+    approximate submission time and issue details. Deleting the app deletes its local learning data. If
+    you have questions about this, or believe this policy doesn't fully answer something you're required
+    to be told under your local law (for example under the GDPR or CCPA), contact us using the details
+    below.
   </p>
 
   <h2>Changes to this policy</h2>
